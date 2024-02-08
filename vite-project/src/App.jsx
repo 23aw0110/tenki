@@ -65,11 +65,16 @@ const App = () => {
   return (
     <>
       <h1>今日の天気</h1>
-      <select onChange={handleChange}>
-        <option value="tokyo">東京</option>
-        <option value="osaka">大阪</option>
-        <option value="sapporo">札幌</option>
-      </select>
+      <div className="cp_ipselect cp_sl04">
+        <select onChange={handleChange}>
+          <option value="" hidden>
+            Choose
+          </option>
+          <option value="tokyo">東京</option>
+          <option value="osaka">大阪</option>
+          <option value="sapporo">札幌</option>
+        </select>
+      </div>
       {temperature && <p className="temperature">気温: {temperature} ℃</p>}
       <WeatherComponent selectedCity={selectedCity} />
     </>
